@@ -1,7 +1,9 @@
-package com.kifaru.java.businesslogic;
+package com.kifaru.java.data;
 
-import com.kifaru.java.data.DatabaseMgmt;
-
+import javax.sql.RowSet;
+import javax.sql.rowset.CachedRowSet;
+import javax.sql.rowset.RowSetFactory;
+import javax.sql.rowset.RowSetProvider;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -11,7 +13,7 @@ import java.sql.Statement;
 /**
  * Created by Andrew M.
  */
-public class doctorQueries {
+public class DoctorQueries {
 
 
     public static void showAllDoctors() throws SQLException,IOException
@@ -30,6 +32,16 @@ public class doctorQueries {
 
         }
 
+
+    }
+
+    public RowSet retrieveAllDoctorsRowSet()throws SQLException,IOException{
+
+            RowSetFactory rowSetFactory = RowSetProvider.newFactory();
+            CachedRowSet cachedRowSet = rowSetFactory.createCachedRowSet();
+            cachedRowSet.setCommand("select * from doctor");
+            cachedRowSet.execute(DatabaseMgmt.getConnection());
+            return cachedRowSet;
 
     }
 
