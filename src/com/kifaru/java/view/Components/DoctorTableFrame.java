@@ -1,4 +1,4 @@
-package com.kifaru.java.view.Frames;
+package com.kifaru.java.view.Components;
 
 import com.kifaru.java.controllers.DoctorController;
 

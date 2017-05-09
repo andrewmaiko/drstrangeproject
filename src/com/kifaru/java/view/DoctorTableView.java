@@ -1,6 +1,6 @@
 package com.kifaru.java.view;
 
-import com.kifaru.java.view.Frames.DoctorTableFrame;
+import com.kifaru.java.view.Components.DoctorTableFrame;
 
 import javax.swing.*;
 
